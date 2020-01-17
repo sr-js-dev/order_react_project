@@ -20,11 +20,11 @@ export const fetchLoginData = (params) => {
           $.ajax(settings).done(function (response) {
           })
           .then(response => {
-            window.localStorage.setItem('nevema_token', response.access_token);
-            window.localStorage.setItem('nevema_userName', response.cuserName);
-            window.localStorage.setItem('nevema_roles', response.roles);
+            window.localStorage.setItem('eijf_token', response.access_token);
+            window.localStorage.setItem('eijf_userName', response.cuserName);
+            window.localStorage.setItem('eijf_roles', response.roles);
             dispatch(fetchLoginDataSuccess(response));
-            history.push('/product')
+            history.push('/dashboard')
         })
         .catch(err => {
             dispatch(fetchLoginDataFail(err.responseJSON.error_description));
@@ -60,8 +60,8 @@ export const fetchLoginDataSuccess = (data) => {
 //change lang
 export const changeLan = (params) => {
     return (dispatch) => {
-        window.localStorage.setItem('nevema_lang',  params.value);
-        window.localStorage.setItem('nevema_label',  params.label);
+        window.localStorage.setItem('eijf_lang',  params.value);
+        window.localStorage.setItem('eijf_label',  params.label);
         dispatch(fetchChangeLan(params.value));
     };
 }

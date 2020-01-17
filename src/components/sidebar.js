@@ -21,64 +21,44 @@ class Sidebar extends Component {
       return (
         <div>
             <aside className="sidebar">
-                <a href="/" className="sidebar__logo"><img src={require('../assets/images/appmakerz.svg')} alt="appzmakerz"></img></a>
+                <div className="logo">
+                    <a href="/nl-nl">
+                        <img title="" className="Logo--desktop" alt="Eijffinger Nederland" src='https://www.eijffinger.com/Themes/Eijffinger/Content/images/logo.svg'/>
+                    </a>
+                </div>
                 <nav className="menu">
                     <ul className="menu__list">
                         <li id="0" className="menu__item" onClick={this.changeItem}>
                             <Link to="./dashboard" className={window.location.pathname === "/dashboard" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
                                 <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-dashboard.svg")} alt="Dashboard"/>
+                                    <i className="fas fa-home menu__link-img-wrap"></i>
                                 </span>
-                                <span>{trls("Dashboard")}</span>
+                                <span className="menu_item-span">{trls("Dashboard")}</span>
                             </Link>
                         </li>
                         <li className="menu__separator"></li>
                         <li id="0" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/user'} className={window.location.pathname === "/user" || window.location.pathname === "/user-detail" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
+                            <Link to={'/orders'} className={window.location.pathname === "/orders" || window.location.pathname === "/order-detail" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
                                 <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
+                                    <i className="far fa-copy menu__link-img-wrap"></i>
                                 </span>
-                                <span>{trls("User")}</span>
+                                <span className="menu_item-span">{trls("Orders")}</span>
                             </Link>
                         </li>
-                        <li id="1" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/product'} className={window.location.pathname === "/product" || window.location.pathname === "/product-detail" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
+                        <li id="0" className="menu__item" onClick={this.changeItem}>
+                            <Link to={'/place-order'} className={window.location.pathname === "/place-order" || window.location.pathname === "/place-order" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
                                 <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
+                                    <i className="far fa-copy menu__link-img-wrap"></i>
                                 </span>
-                                <span>{trls("Products")}</span>
+                                <span className="menu_item-span">{trls("Place_an_order")}</span>
                             </Link>
                         </li>
-                        <li id="2" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/sales-order'} className={window.location.pathname === "/sales-order" || window.location.pathname === "/sales-order-detail" ? 'menu__link menu__link--active' : 'menu__link menu__link'} >
+                        <li id="0" className="menu__item" onClick={this.changeItem}>
+                            <Link to={'/make-payment'} className={window.location.pathname === "/make-payment" || window.location.pathname === "/make-payment" ? 'menu__link menu__link--active' : 'menu__link menu__link'}>
                                 <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
+                                    <i className="far fa-copy menu__link-img-wrap"></i>
                                 </span>
-                                <span>{trls("Sales_Order")}</span>
-                            </Link>
-                        </li>
-                        <li id="3" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/purchase-order'} className={window.location.pathname === "/purchase-order" || window.location.pathname === "/purchase-order-detail" ? 'menu__link menu__link--active' : 'menu__link menu__link'} >
-                                <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
-                                </span>
-                                <span>{trls("Purchase_Order")}</span>
-                            </Link>
-                        </li>
-                        <li id="4" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/task-overview'} className={window.location.pathname === "/task-overview" ? 'menu__link menu__link--active' : 'menu__link menu__link'} >
-                                <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
-                                </span>
-                                <span>{trls("Task")}</span>
-                            </Link>
-                        </li>
-                        <li id="4" className="menu__item" onClick={this.changeItem}>
-                            <Link to={'/quality-overview'} className={window.location.pathname === "/quality-overview" ? 'menu__link menu__link--active' : 'menu__link menu__link'} >
-                                <span className="menu__link-img-wrap">
-                                    <img src={require("../assets/images/icon-orders.svg")} alt="Orders"/>
-                                </span>
-                                <span>{trls("Quality")}</span>
+                                <span className="menu_item-span">{trls("Make_a_payment")}</span>
                             </Link>
                         </li>
                     </ul>

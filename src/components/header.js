@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import * as authAction  from '../actions/authAction';
 import { Dropdown } from 'react-bootstrap';
-import Select from 'react-select';
 import { connect } from 'react-redux';
 import history from '../history';
 import { removeAuth } from '../components/auth';
@@ -18,9 +17,9 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {  
-            roles:[{"value":"en_US","label":"En"},{"value":"nl_BE","label":"Nl"}],
-            selectrolvalue:window.localStorage.getItem('nevema_lang'),
-            selectrollabel:window.localStorage.getItem('nevema_label'),
+            roles:[{"value":"en_US","label":"English"},{"value":"nl_BE","label":"Dutch"}],
+            selectrolvalue:window.localStorage.getItem('eijf_lang'),
+            selectrollabel:window.localStorage.getItem('eijf_label'),
         };
     }
     componentDidMount () {
@@ -52,16 +51,16 @@ class Header extends Component {
                     <span></span>
                 </div>
                 <a href="/" className="header__logo-mob">
-                    <img src={require("../assets/images/appmakerz.svg")} alt="logo"/>
+                    <img title="" className="Logo--mobile" alt="Eijffinger Nederland" src="https://www.eijffinger.com/Themes/Eijffinger/Content/images/logo--mobile.svg"/>
                 </a>
                 <div className="header__controls">
-                        <Select
+                        {/* <Select
                                 name="lan"
                                 options={this.state.roles}
                                 className="select-lang-class"
                                 value={{"label":this.state.selectrollabel,"value":this.state.selectrolvalue}}
                                 onChange={val => this.changeLangauge(val)}
-                            />
+                            /> */}
                         <Dropdown>
                             <Dropdown.Toggle variant="success" id="dropdown-basic" style={{color:"#000000"}}>
                                 Johan Boerema<img src={require("../assets/images/avatar.jpg")} alt="User avatar" className="header__user-dropdown-img"/> 
